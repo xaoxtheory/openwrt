@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012-2015 OpenWrt.org
+# Copyright (C) 2012-2017 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -19,7 +19,7 @@ endef
 
 define Build/boot-img
 	rm -f $@.boot
-	mkfs.fat -C $@.boot $(FAT32_BLOCKS)
+	mkfs.fat -C $@.boot -s 1 $(FAT32_BLOCKS)
 	mcopy -i $@.boot $(LINUX_DIR)/COPYING ::COPYING.linux
 	mcopy -i $@.boot $(KDIR)/bootcode.bin ::
 	mcopy -i $@.boot $(KDIR)/LICENCE.broadcom ::
@@ -80,7 +80,7 @@ endif
 ### BCM2710/BCM2837 ###
 ifeq ($(SUBTARGET),bcm2710)
   # Raspberry Pi 3 Model B
-  $(eval $(call bcm27xx,RaspberryPi_3,rpi-3,bcm2710-rpi-3-b))
+  $(eval $(call bcm27xx,RaspberryPi_3,rpi-3,bcm2710-rpi-3-b bcm2710-rpi-cm3))
 endif
 
 $(eval $(call BuildImage))

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (C) 2015-2016 OpenWrt.org
+# Copyright (C) 2015-2017 OpenWrt.org
 
 ifname=""
 
@@ -26,6 +26,9 @@ brcm2708_detect() {
 		;;
 	"Raspberry Pi 3 Model B Rev"*)
 		board_name="rpi-3-b"
+		;;
+	"Raspberry Pi Compute Module 3 Rev"*)
+		board_name="rpi-3-cm"
 		;;
 	*)
 		board_name="unknown"

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012-2016 OpenWrt.org
+# Copyright (C) 2012-2017 OpenWrt.org
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -8,8 +8,8 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=brcm2708-gpu-fw
-PKG_VERSION:=2016-06-08
-PKG_RELEASE:=70143fe9d371cd6486a80d6765e93b5574212b64
+PKG_VERSION:=2017-04-04
+PKG_RELEASE:=b038854bac01ac2cb772de19744a7bb956a3b170
 
 PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)/rpi-firmware-$(PKG_RELEASE)
 
@@ -32,7 +32,7 @@ define Download/bootcode_bin
   FILE:=$(RPI_FIRMWARE_FILE)-bootcode.bin
   URL:=$(RPI_FIRMWARE_URL)
   URL_FILE:=bootcode.bin
-  MD5SUM:=5bbb5f25dfe16f2871d5defcc48ac9ff
+  MD5SUM:=60009c193abdc91edc6439223266b00d
 endef
 $(eval $(call Download,bootcode_bin))
 
@@ -40,7 +40,7 @@ define Download/fixup_dat
   FILE:=$(RPI_FIRMWARE_FILE)-fixup.dat
   URL:=$(RPI_FIRMWARE_URL)
   URL_FILE:=fixup.dat
-  MD5SUM:=c85a8a7fd6f1012dedb979d5a5350135
+  MD5SUM:=d87ed2a8e911861ca121cb52eea8bb1b
 endef
 $(eval $(call Download,fixup_dat))
 
@@ -48,7 +48,7 @@ define Download/fixup_cd_dat
   FILE:=$(RPI_FIRMWARE_FILE)-fixup_cd.dat
   URL:=$(RPI_FIRMWARE_URL)
   URL_FILE:=fixup_cd.dat
-  MD5SUM:=1e6c0d6c576956282b498f255eb12d3b
+  MD5SUM:=58c96af4eef393408c72ca94b1af5370
 endef
 $(eval $(call Download,fixup_cd_dat))
 
@@ -56,7 +56,7 @@ define Download/start_elf
   FILE:=$(RPI_FIRMWARE_FILE)-start.elf
   URL:=$(RPI_FIRMWARE_URL)
   URL_FILE:=start.elf
-  MD5SUM:=94f8e421d6e46e89a60aa001af63844e
+  MD5SUM:=111bd022b1a541e5a12743d186a2f4cd
 endef
 $(eval $(call Download,start_elf))
 
@@ -64,7 +64,7 @@ define Download/start_cd_elf
   FILE:=$(RPI_FIRMWARE_FILE)-start_cd.elf
   URL:=$(RPI_FIRMWARE_URL)
   URL_FILE:=start_cd.elf
-  MD5SUM:=0a9082c25af181cbf16338de2362d5d6
+  MD5SUM:=57b4ee5507c90b89019b143f34104b53
 endef
 $(eval $(call Download,start_cd_elf))
 
